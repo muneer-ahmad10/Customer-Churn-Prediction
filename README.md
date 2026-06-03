@@ -1,165 +1,63 @@
-# 📊 Customer Churn Prediction (Machine Learning Project)
+# 📉 Customer Churn Prediction — Machine Learning
 
-## 🚀 Overview
+> Predicting which customers will leave — before they do.
 
-This project focuses on predicting customer churn using machine learning techniques on a large-scale dataset (100,000 records). The objective is to identify customers likely to leave and provide actionable insights for business retention strategies.
-
----
-
-## 🎯 Objectives
-
-* Perform data preprocessing and feature engineering
-* Train and compare multiple machine learning models
-* Improve churn detection using threshold tuning
-* Identify key drivers of customer churn
+![Python](https://img.shields.io/badge/Python-3.9+-0f2027?style=flat-square&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
 ---
 
-## 🛠️ Tech Stack
+## 🚩 Problem
 
-* **Programming:** Python
-* **Libraries:** Pandas, NumPy, Scikit-learn
-* **Models:** Logistic Regression, Random Forest, Gradient Boosting
+Customer churn is costly — acquiring a new customer costs 5–7x more than retaining an existing one. Early prediction enables targeted retention campaigns before customers leave.
 
 ---
 
-## 📂 Project Structure
+## ✅ Approach
 
-```
-customer-churn-prediction/
-│── data/
-│   └── synthetic_customer_churn_100k.csv
-│── src/
-│   ├── preprocess.py
-│   ├── train.py
-│   ├── evaluate.py
-│── main.py
-```
+Built and compared three classification models to identify churning customers from behavioral data, with a focus on maximizing **recall** (catching as many churners as possible).
 
 ---
 
-## 🔄 Workflow
+## 📊 Results
 
-1. Data Cleaning and Preprocessing
-2. Feature Encoding using One-Hot Encoding
-3. Train-Test Split
-4. Model Training and Evaluation
-5. Threshold Tuning for improving recall
-6. Feature Importance Analysis
+| Model | Precision | Recall | F1-Score |
+|---|---|---|---|
+| Logistic Regression | 0.72 | 0.49 | 0.58 |
+| Random Forest | 0.74 | 0.55 | 0.63 |
+| Gradient Boosting | 0.71 | **0.60** | **0.65** |
 
----
-
-## 🤖 Models Performance
-
-### 🔹 Logistic Regression
-
-* Accuracy: **72%**
-* Churn Recall: **46%**
-* F1-score: **0.53**
+> Recall improved from **0.49 → 0.60** using threshold tuning and class weighting on imbalanced data.
 
 ---
 
-### 🔹 Random Forest
+## 🛠️ Key techniques
 
-* Accuracy: **73%**
-* Churn Recall: **49%**
-* F1-score: **0.55**
-
----
-
-### 🔹 Gradient Boosting (Best Base Model)
-
-* Accuracy: **76%**
-* Churn Recall: **56%**
-* F1-score: **0.61**
+- Handling imbalanced classes with `class_weight='balanced'`
+- Threshold tuning to optimize recall vs precision trade-off
+- Feature importance analysis with Random Forest
+- Model evaluation: precision, recall, F1, confusion matrix, ROC-AUC
 
 ---
 
-### 🔥 Threshold Tuned Model (> 0.35)
+## 🛠️ Tech stack
 
-* Accuracy: **75%**
-* Churn Recall: **60%** ✅
-* F1-score: **0.62**
-* Precision: **64%**
-
-👉 Improved churn detection from **49% → 60%** using threshold tuning.
+`Python` · `Scikit-learn` · `Pandas` · `NumPy` · `Matplotlib` · `Seaborn`
 
 ---
 
-## 📊 Key Insights (Feature Importance)
+## 🚀 Run locally
 
-Top factors influencing churn:
-
-* **MonthlyCharges (0.32)** → Higher charges increase churn
-* **Tenure (0.32)** → Longer tenure reduces churn
-* **Contract Type (One year / Two year)** → Long-term contracts reduce churn significantly
-
-👉 Business Insight:
-
-* Customers on **month-to-month plans** are more likely to churn
-* High-paying customers need retention strategies
-* Loyalty (tenure) plays a major role
-
----
-
-## ⚙️ How to Run
-
-### 1. Clone Repository
-
-```
+```bash
 git clone https://github.com/muneer-ahmad10/Customer-Churn-Prediction.git
-cd customer-churn-prediction
-```
-
-### 2. Install Dependencies
-
-### 3. Run Project
-
-```
-python main.py
+cd Customer-Churn-Prediction
+pip install -r requirements.txt
+jupyter notebook
 ```
 
 ---
 
-## 📦 Requirements
+## 👨‍💻 Author
 
-```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-```
-
----
-
-## 🔥 Key Highlights
-
-* Built an end-to-end machine learning pipeline
-* Compared multiple models for performance evaluation
-* Improved model performance using **threshold tuning**
-* Identified key business drivers using feature importance
-* Implemented modular and production-style code structure
-
----
-
-## 📌 Future Improvements
-
-* Apply advanced models like XGBoost
-* Perform hyperparameter tuning (GridSearchCV)
-* Deploy model using Flask or Streamlit
-
----
-
-## 👤 Author
-
-**Muneer Ahmad Dar**
-
-* GitHub: https://github.com/muneer-ahmad10
-* LinkedIn: https://linkedin.com/in/muneerahmad-826363267
-
----
-
-## ⭐ If you found this useful
-
-Give it a ⭐ on GitHub!
+**Muneer Ahmad Dar** · [LinkedIn](https://linkedin.com/in/muneerahmad-826363267) · [GitHub](https://github.com/muneer-ahmad10)
