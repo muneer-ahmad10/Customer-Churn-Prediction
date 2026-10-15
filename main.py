@@ -4,7 +4,7 @@ from src.evaluate import evaluate_models, threshold_tuning, feature_importance
 
 def main():
     # Load & preprocess
-    X, y = load_and_preprocess('data/synthetic_customer_churn_100k.csv')
+    X, y = load_and_preprocess('Data/synthetic_customer_churn_100k.csv')
 
     # Train
     models, y_test = train_models(X, y)
